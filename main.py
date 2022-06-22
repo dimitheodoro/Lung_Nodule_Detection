@@ -8,17 +8,20 @@ import torch
 from albumentations.pytorch.transforms import ToTensor
 from albumentations import Compose
 from torchvision.ops import nms
+from torch.utils import model_zoo
+
+
 
 
 
 os.chdir(r'C:\Users\User\Desktop\LUNG NODULE DETECTION\streamlit')
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-model = torch.load('Weights_LIDC_GRAY',map_location=device)
+model = model_zoo.load_url ('https://drive.google.com/file/d/1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy/view?usp=sharing',map_location=device)
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
 
 st.title("Detection of Lung Nodules")
-
+ 
 with st.container():
   bio_image= cv2.imread ('FORTH.png')
   bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
