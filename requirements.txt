@@ -6,3 +6,4 @@ albumentations
 Pillow 
 torch 
 torchvision 
+apt-get update && apt-get install libgl1
