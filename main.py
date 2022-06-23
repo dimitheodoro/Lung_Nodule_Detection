@@ -5,7 +5,7 @@ import cv2
 import os
 import numpy as np
 import torch
-from albumentations.pytorch.transforms import ToTensor
+from albumentations.pytorch.transforms import ToTensorV2 
 from albumentations import Compose
 from torchvision.ops import nms
 import gdown 
@@ -39,7 +39,7 @@ if st.button("Press for Detection of Lung Nodules"):
     image_arr = np.array(im_gray).astype('float32')
     image_arr = np.expand_dims(image_arr,axis=2)
     image_arr /= 255.
-    transform = Compose([ToTensor()])
+    transform = Compose([ToTensorV2 ()])
     imageTensor = transform(image=image_arr)['image']
     imageTensor = imageTensor.to(device) 
     model.eval()
