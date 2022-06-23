@@ -56,7 +56,7 @@ if st.button("Press for Detection of Lung Nodules"):
         for i in range(len(boxes[keep])):
             cv2.rectangle(image_arr, (int  (boxes[keep][i][0] )  ,   int (boxes[keep][i][1])  ), (int  (boxes[keep][i][2] )  ,   int (boxes[keep][i][3])   ),colors[i],1)
             cv2.putText(img = image_arr,text = str('{:.3}'.format(scores[i])),org = (100+i*150,100),fontFace = cv2.FONT_HERSHEY_SIMPLEX, fontScale=1,color =colors[i],thickness =2)
-            placeholder.image(image_arr)
+            placeholder.image(image_arr,, clamp=True)
 
     elif len(boxes.detach().cpu().numpy())==0 :
         st.write('"NO NODULE DETECTED !!!"')
