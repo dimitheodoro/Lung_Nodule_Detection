@@ -8,3 +8,6 @@ Pillow
 torch 
 torchvision 
 gdown
+ffmpeg 
+libsm6 
+libxext6
