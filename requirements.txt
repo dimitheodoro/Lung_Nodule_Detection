@@ -1,5 +1,6 @@
 streamlit==0.69.2
 numpy
+opencv-contrib-python
 opencv-python-headless
 click==8.0.4
 albumentations
