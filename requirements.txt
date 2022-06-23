@@ -1,6 +1,7 @@
 streamlit==0.69.2
 numpy==1.21.6
-python3-opencv
+opencv-python-headless
+libgl1
 click==7.1.2
 albumentations==0.1.12
 Pillow==8.0.0
