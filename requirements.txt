@@ -2,7 +2,7 @@ streamlit==0.69.2
 numpy
 opencv-python-headless
 click==8.0.4
-albumentations
+albumentations==0.5.2
 Pillow 
 torch 
 torchvision 
