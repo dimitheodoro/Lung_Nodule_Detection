@@ -8,4 +8,4 @@ Pillow
 torch 
 torchvision 
 gdown
-libgl1-mesa-glx
+
