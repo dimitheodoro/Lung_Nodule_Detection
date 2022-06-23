@@ -9,9 +9,12 @@ from albumentations.pytorch.transforms import ToTensor
 from albumentations import Compose
 from torchvision.ops import nms
 from torch.utils import model_zoo
+from torch.hub import tqdm, load_state_dict_from_url as load_url
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 model = model_zoo.load_url ('https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy',map_location=device)
+
+#state_dict = torch.hub.load_state_dict_from_url('https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy')
 
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
 st.title("Detection of Lung Nodules")
