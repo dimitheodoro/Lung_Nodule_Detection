@@ -1,8 +1,8 @@
 streamlit==0.69.2
-numpy==1.18.5
-opencv-python-headless
+numpy
+opencv-python
 click==8.0.4
 albumentations==0.1.12
-Pillow==8.0.0
-torch==1.7.1
+Pillow 
+torch 
 torchvision 
