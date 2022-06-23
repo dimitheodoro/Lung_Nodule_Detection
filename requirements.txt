@@ -1,6 +1,6 @@
 streamlit==0.69.2
 numpy
-opencv-python-headless
+opencv-python==4.1.2.30
 click==8.0.4
 albumentations
 Pillow 
