@@ -1,9 +1,9 @@
 streamlit==0.69.2
 numpy
-opencv-python
+python3-opencv
 click==8.0.4
 albumentations
 Pillow 
 torch 
 torchvision 
-apt-get update && apt-get install libgl1
+
