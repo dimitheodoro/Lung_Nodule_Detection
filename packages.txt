@@ -1,1 +1,2 @@
-update && apt-get install libgl1
+update 
+libgl1
