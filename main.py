@@ -11,7 +11,7 @@ from torchvision.ops import nms
 from torch.utils import model_zoo
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-model = model_zoo.load_url ('https://drive.google.com/file/d/1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy/view?usp=sharing/view',map_location=device)
+model = model_zoo.load_url ('https://drive.google.com/file/d/1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy/view?usp=sharing',map_location=device)
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
 st.title("Detection of Lung Nodules")
  
