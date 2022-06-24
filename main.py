@@ -25,7 +25,7 @@ model = load_model()
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
 st.title("Detection of Lung Nodules")
  
-with st.beta_container():
+with st.container():
   bio_image= cv2.imread ('FORTH.png')
   bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
   st.image(bio_image)
