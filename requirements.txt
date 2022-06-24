@@ -1,4 +1,4 @@
-streamlit
+streamlit==0.73
 numpy
 opencv-python-headless
 opencv-contrib-python
