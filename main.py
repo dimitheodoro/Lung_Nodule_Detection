@@ -13,7 +13,12 @@ import gdown
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 url = 'https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy'
 gdown.download(url, 'weight_path', quiet=False)
-model = torch.load('weight_path',map_location=device)
+
+@st.cache
+def load_model():
+ return torch.load('weight_path',map_location=device)
+
+model = load_model()
 
 #state_dict = torch.hub.load_state_dict_from_url('https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy')
 
