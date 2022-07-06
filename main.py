@@ -60,7 +60,18 @@ if st.button("Press for Detection of Lung Nodules"):
 
         for i in range(len(boxes[keep])):
             cv2.rectangle(image_arr, (int  (boxes[keep][i][0] )  ,   int (boxes[keep][i][1])  ), (int  (boxes[keep][i][2] )  ,   int (boxes[keep][i][3])   ),colors[i],1)
-            cv2.putText(img = image_arr,text = str('{:.3}'.format(scores[i])),org = (100+i*150,100),fontFace = cv2.FONT_HERSHEY_SIMPLEX, fontScale=1,color =colors[i],thickness =2)
+            h, w, _ = image_arr.shape
+            font_scale = min(1,max(3,int(w/500)))
+            font_thickness = min(2, max(10,int(w/50)))
+            p1, p2 = (int  (boxes[keep][i][0] ), int  (boxes[keep][i][1] )), (int  (boxes[keep][i][2] ), int  (boxes[keep][i][3] ))
+            tw, th = cv2.getTextSize(
+                str('{:.3}'.format(scores[i])), 
+                0, fontScale=font_scale, thickness=font_thickness
+            )[0]
+            p2 = p1[0] + tw, p1[1] + -th - 10
+            cv2.rectangle(image_arr, p1,p2 ,colors[i],-1)
+            cv2.putText(img = image_arr,text = str('{:.3}'.format(scores[i])),org = (int  (boxes[keep][i][0]),int  (boxes[keep][i][1])-5),fontFace = cv2.FONT_HERSHEY_SIMPLEX, 
+                fontScale=font_scale,color =(255,255,255),thickness =font_thickness)
             placeholder.image(image_arr, clamp=True)
 
     elif len(boxes.detach().cpu().numpy())==0 :
