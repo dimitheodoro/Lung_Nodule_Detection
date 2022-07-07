@@ -16,6 +16,7 @@ gdown.download(url, 'weight_path', quiet=False)
 #https://drive.google.com/file/d/1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy/view?usp=sharing
 @st.cache
 def load_model():
+ print(" MODEL LOADED !!!")
  return torch.load('weight_path',map_location=device)
 
 model = load_model()
