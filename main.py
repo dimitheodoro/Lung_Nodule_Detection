@@ -57,7 +57,7 @@ if st.button("Press for Detection of Lung Nodules"):
     keep = nms (boxes=boxes,scores=scores,iou_threshold=0.3)
     scores =scores.detach().cpu().numpy()
     
-    print( "len :",len(boxes.detach().cpu().numpy())!)
+    print( "len :",len(boxes.detach().cpu().numpy()))
     
     if len(boxes.detach().cpu().numpy())!=0:
         image_arr =np.stack((image_arr,image_arr,image_arr),axis=2)
