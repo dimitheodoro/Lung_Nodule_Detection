@@ -47,7 +47,7 @@ if st.button("Press for Detection of Lung Nodules"):
     imageTensor = transform(image=image_arr)['image']
     imageTensor = imageTensor.to(device) 
     model.eval()
-
+    print(imageTensor)
     outputs = model([imageTensor])
     boxes = outputs[0]['boxes']
     scores = outputs[0]['scores']
