@@ -20,7 +20,9 @@ def load_model():
 
 model = load_model()
 
-#state_dict = torch.hub.load_state_dict_from_url('https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy')
+if model:
+ print("MODEL LOADED")
+
 
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
 st.title("Detection of Lung Nodules")
@@ -54,6 +56,9 @@ if st.button("Press for Detection of Lung Nodules"):
     scores = outputs[0]['scores']
     keep = nms (boxes=boxes,scores=scores,iou_threshold=0.3)
     scores =scores.detach().cpu().numpy()
+    
+    print( "len :",len(boxes.detach().cpu().numpy())!)
+    
     if len(boxes.detach().cpu().numpy())!=0:
         image_arr =np.stack((image_arr,image_arr,image_arr),axis=2)
         image_arr =np.squeeze(image_arr)
