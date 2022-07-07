@@ -20,8 +20,7 @@ def load_model():
 
 model = load_model()
 
-if model:
- print("MODEL LOADED")
+print(model)
 
 
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
