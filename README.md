@@ -2,4 +2,4 @@
 Detection of Lung Nodules from CT scans
 
 
-https://dimitheodoro-lung-nodule-detection-main-pqs0e2.streamlitapp.com/
+https://dimitheodoro-lung-nodule-detection-main-n1ziqn.streamlitapp.com/
