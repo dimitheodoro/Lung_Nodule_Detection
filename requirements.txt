@@ -8,4 +8,4 @@ Pillow
 torch 
 torchvision 
 gdown
-stqdm
+
