@@ -23,11 +23,12 @@ from stqdm import stqdm
 
 # model = load_model()
 
+bar = st.progress(100)
 
 @st.experimental_singleton
-for i in stqdm(range(100)):
-    def download_weights(url):
-        gdown.download(url, "weight_path", quiet=False)
+def download_weights(url):
+#     gdown.download(url, "weight_path", quiet=False)
+    bar.gdown.download(url, "weight_path", quiet=False)
 
 
 @st.experimental_singleton
