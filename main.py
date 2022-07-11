@@ -25,13 +25,13 @@ import gdown
 
 
 
-@st.experimental_memo
+@st.experimental_memo(ttl=60)
 def download_weights(url):
     gdown.download(url, "weight_path", quiet=False)
 
 
 
-@st.experimental_memo
+@st.experimental_memo(ttl=60)
 def load_model():
     print(" MODEL LOADED !!!")
     return torch.load("weight_path", map_location=device)
