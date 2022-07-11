@@ -9,7 +9,7 @@ from albumentations.pytorch.transforms import ToTensorV2
 from albumentations import Compose
 from torchvision.ops import nms
 import gdown 
-from stqdm import stqdm
+
 
 
 # device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
