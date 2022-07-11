@@ -22,14 +22,12 @@ import gdown
 # model = load_model()
 
 
-# @st.experimental_singleton
-@st.experimental_memo
+@st.experimental_singleton
 def download_weights(url):
     gdown.download(url, "weight_path", quiet=False)
 
 
-# @st.experimental_singleton
-@st.experimental_memo
+@st.experimental_singleton
 def load_model():
     print(" MODEL LOADED !!!")
     return torch.load("weight_path", map_location=device)
