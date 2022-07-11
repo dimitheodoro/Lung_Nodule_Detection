@@ -25,7 +25,7 @@ from stqdm import stqdm
 
 
 @st.experimental_singleton
-for _ in stqdm(range(100)):
+for i in stqdm(range(100)):
     def download_weights(url):
         gdown.download(url, "weight_path", quiet=False)
 
