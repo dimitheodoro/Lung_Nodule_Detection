@@ -9,6 +9,8 @@ from albumentations.pytorch.transforms import ToTensorV2
 from albumentations import Compose
 from torchvision.ops import nms
 import gdown 
+from stqdm import stqdm
+
 
 # device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 # url = 'https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy'
@@ -23,8 +25,9 @@ import gdown
 
 
 @st.experimental_singleton
-def download_weights(url):
-    gdown.download(url, "weight_path", quiet=False)
+for _ in stqdm(range(100)):
+    def download_weights(url):
+        gdown.download(url, "weight_path", quiet=False)
 
 
 @st.experimental_singleton
