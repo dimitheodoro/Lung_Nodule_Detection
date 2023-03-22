@@ -25,7 +25,7 @@ import gdown
 # model = load_model()
 
 cwd = os.getcwd()
-print("---------------------------------------------------------",cwd)
+print("---------------------------------------------------- -----",cwd)
 
 # @st.experimental_memo(ttl=60)
 # def download_weights(url):
