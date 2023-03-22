@@ -28,14 +28,14 @@ cwd = os.getcwd()
 
 @st.experimental_memo(ttl=60)
 def download_weights(url):
-    gdown.download(url,os.path.join(cwd,'weight_path'), quiet=False)
+    gdown.download(url,'weight_path', quiet=False)
 
 
 
 @st.experimental_memo(ttl=60)
 def load_model():
     print(" MODEL LOADED !!!")
-    return torch.load(os.path.join(cwd,'weight_path'), map_location=device)
+    return torch.load('weight_path', map_location=device)
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
