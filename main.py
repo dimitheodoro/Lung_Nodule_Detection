@@ -29,7 +29,7 @@ cwd = os.getcwd()
 @st.experimental_memo(ttl=60)
 def download_weights(url):
     gdown.download(url,'weight_path', quiet=False)
-    print(os.listdir(cwd))
+    
 
 
 
