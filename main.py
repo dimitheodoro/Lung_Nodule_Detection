@@ -26,7 +26,7 @@ url = 'https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV
 cwd = os.getcwd()
 
 
-@st.experimental_memo(ttl=60)
+#@st.experimental_memo(ttl=60)
 def download_weights(url):
     gdown.download(url,'weight_path', quiet=False)
     print('-'*300)
@@ -34,7 +34,7 @@ def download_weights(url):
 
 
 
-@st.experimental_memo(ttl=60)
+#@st.experimental_memo(ttl=60)
 def load_model():
     print(" MODEL LOADED !!!")
     return torch.load('weight_path', map_location=device)
