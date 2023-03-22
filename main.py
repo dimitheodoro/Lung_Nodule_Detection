@@ -13,7 +13,7 @@ import gdown
 
 
 # device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-# url = 'https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy'
+url = 'https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy'
 # gdown.download(url, 'weight_path', quiet=False)
 # #https://drive.google.com/file/d/1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy/view?usp=sharing
 # @st.cache
