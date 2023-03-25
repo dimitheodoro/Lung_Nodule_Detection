@@ -26,7 +26,7 @@ def load_model():
 
 @st.experimental_memo(ttl=60)
 def download_weights(url):
-    gdown.download(url,'/app/lung_nodule_detection/weight_path'', quiet=False)
+    gdown.download(url,'/app/lung_nodule_detection/weight_path', quiet=False)
    
     
 @st.experimental_memo(ttl=60)
