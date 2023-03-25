@@ -10,7 +10,8 @@ from albumentations import Compose
 from torchvision.ops import nms
 import gdown 
 
-# cwd = os.getcwd() # /app/lung_nodule_detection
+cwd = os.getcwd() # /app/lung_nodule_detection
+st.write(cwd)
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
