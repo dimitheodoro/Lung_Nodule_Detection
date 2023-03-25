@@ -18,21 +18,15 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 # gdown.download(url, '/app/lung_nodule_detection/weight_path', quiet=False)
 
 
-@st.cache
-def load_model():
- print(" MODEL LOADED !!!")
- return torch.load('/app/lung_nodule_detection/weight_path',map_location=device)
-
 
 @st.experimental_memo(ttl=60)
 def download_weights(url):
     gdown.download(url,'/app/lung_nodule_detection/weight_path', quiet=False)
    
-    
-@st.experimental_memo(ttl=60)
+@st.cache
 def load_model():
-    print(" MODEL LOADED !!!")
-    return torch.load('weight_path', map_location=device)
+ print(" MODEL LOADED !!!")
+ return torch.load('/app/lung_nodule_detection/weight_path',map_location=device)
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
