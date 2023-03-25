@@ -20,7 +20,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 
 
-@st.experimental_memo(ttl=60)
+# @st.experimental_memo(ttl=60)
 def download_weights(url):
     gdown.download(url,'/app/lung_nodule_detection/weight_path', quiet=False)
    
