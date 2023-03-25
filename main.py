@@ -11,7 +11,7 @@ from torchvision.ops import nms
 import gdown 
 
 cwd = os.getcwd()
-print("---------------------------------------------------- -----",cwd)
+st.title(cwd)
 
 
 # device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
