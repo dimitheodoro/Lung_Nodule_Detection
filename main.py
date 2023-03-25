@@ -5,12 +5,12 @@ import cv2
 import os
 import numpy as np
 import torch
-# from albumentations.pytorch.transforms import ToTensorV2 
-# from albumentations import Compose
+from albumentations.pytorch.transforms import ToTensorV2 
+from albumentations import Compose
 from torchvision.ops import nms
 import gdown 
 
-cwd = os.getcwd()
+cwd = os.getcwd() # /app/lung_nodule_detection
 st.title(cwd)
 
 
