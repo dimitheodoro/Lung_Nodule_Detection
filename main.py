@@ -8,8 +8,8 @@ import torch
 from albumentations.pytorch.transforms import ToTensorV2 
 from albumentations import Compose
 from torchvision.ops import nms
-# import gdown 
-import torchvision.datasets.utils as utils
+import gdown 
+# import torchvision.datasets.utils as utils
 
 cwd = os.getcwd() # /app/lung_nodule_detection
 
@@ -23,8 +23,8 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 @st.experimental_memo(ttl=60)
 def download_weights(url):
-    utils.download_url(url, 'weight_path')
-#     gdown.download(url,'weight_path', quiet=False)
+#     utils.download_url(url, 'weight_path')
+    gdown.download(url,'weight_path', quiet=False)
 
    
 @st.cache
