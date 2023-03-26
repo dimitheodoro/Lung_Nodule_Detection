@@ -23,7 +23,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 @st.experimental_memo(ttl=60)
 def download_weights(url):
-    utils.download_url(url, 'weight_path')
+    utils.download_url(url, ".", 'weight_path')
 #     gdown.download(url,'weight_path', quiet=False)
 
    
