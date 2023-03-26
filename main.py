@@ -8,10 +8,11 @@ import torch
 from albumentations.pytorch.transforms import ToTensorV2 
 from albumentations import Compose
 from torchvision.ops import nms
-import gdown 
+# import gdown 
+import torchvision.datasets.utils as utils
 
 cwd = os.getcwd() # /app/lung_nodule_detection
-st.write(os.listdir(cwd))
+
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
@@ -22,12 +23,14 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 @st.experimental_memo(ttl=60)
 def download_weights(url):
-    gdown.download(url,'/app/lung_nodule_detection/weight_path', quiet=False)
+    utils.download_url(url, 'weight_path')
+#     gdown.download(url,'weight_path', quiet=False)
+
    
 @st.cache
 def load_model():
  print(" MODEL LOADED !!!")
- return torch.load('/app/lung_nodule_detection/weight_path',map_location=device)
+ return torch.load('weight_path',map_location=device)
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
