@@ -24,10 +24,9 @@ url = "https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV
 
 @st.experimental_memo()
 def download_weights(url):
-    !gdown url
-    !unzip -q weight_path.zip
+
 #     utils.download_url(url, 'weight_path')
-#     gdown.download(url,'weight_path', quiet=False)
+    gdown.download(url,'weight_path', quiet=False)
 
    
 @st.cache
