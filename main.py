@@ -11,8 +11,7 @@ from torchvision.ops import nms
 import gdown 
 # import torchvision.datasets.utils as utils
 
-cwd = os.getcwd() # /app/lung_nodule_detection
-
+st.experimental_memo.clear()
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
