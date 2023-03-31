@@ -21,7 +21,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 url = "https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy"
 
-@st.experimental_memo()
+@cached_download
 def download_weights(url):
 
 #     utils.download_url(url, 'weight_path')
