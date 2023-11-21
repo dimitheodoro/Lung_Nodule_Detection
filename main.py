@@ -36,17 +36,18 @@ def download_weights(url):
         print(f"Failed to download file: {e}")
 
    
-@st.cache
-def load_model():
- print(" MODEL LOADED !!!")
- return torch.load('weight_path',map_location=device)
+# @st.cache
+# def load_model():
+#  print(" MODEL LOADED !!!")
+#  return torch.load('weight_path',map_location=device)
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 url = "https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy"
 
 download_weights(url)
-model = load_model()
+# model = load_model()
+model = torch.load('weight_path',map_location=device)
 
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
 st.title("Detection of Lung Nodules")
