@@ -21,11 +21,19 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # url = "https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV6l5-fZy"
 
+# @st.cache
+# def download_weights(url):
+
+# #     utils.download_url(url, 'weight_path')
+#     gdown.download(url,'weight_path', quiet=False)
+
 @st.cache
 def download_weights(url):
-
-#     utils.download_url(url, 'weight_path')
-    gdown.download(url,'weight_path', quiet=False)
+    try:
+        gdown.download(url, 'weight_path', quiet=False)
+        print("File successfully downloaded to 'weight_path'")
+    except Exception as e:
+        print(f"Failed to download file: {e}")
 
    
 @st.cache
