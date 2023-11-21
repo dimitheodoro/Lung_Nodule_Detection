@@ -31,7 +31,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 def download_weights(url):
     try:
         gdown.download(url, 'weight_path', quiet=False)
-        print("File successfully downloaded to 'weight_path'")
+        st.write("File successfully downloaded to 'weight_path'")
     except Exception as e:
         print(f"Failed to download file: {e}")
 
