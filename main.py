@@ -48,7 +48,7 @@ url = "https://drive.google.com/uc?export=download&id=1XiaNFXISnfVMmbvRGlTxFKVLV
 download_weights(url)
 # model = load_model()
 st.write(os.listdir(os.getcwd()))
-model = torch.load('weight_path',map_location=device)
+model = torch.load(os.path.join(os.getcwd(),'weight_path'),map_location=device)
 
 colors =[(0,255,0),(255,0,0),(0,0,255),(255,255,255)]
 st.title("Detection of Lung Nodules")
