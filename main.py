@@ -30,7 +30,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 @st.cache
 def download_weights(url):
     try:
-        gdown.download(url, 'weight_path', quiet=False)
+        gdown.download(url,os.path.join(os.getcwd(),'weight_path'), quiet=False)
         st.write("File successfully downloaded to 'weight_path'")
     except Exception as e:
         print(f"Failed to download file: {e}")
@@ -39,7 +39,7 @@ def download_weights(url):
 # @st.cache
 # def load_model():
 #  print(" MODEL LOADED !!!")
-#  return torch.load('weight_path',map_location=device)
+#  return torch.load(os.path.join(os.getcwd(),'weight_path',map_location=device))
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
