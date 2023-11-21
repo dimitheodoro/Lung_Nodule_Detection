@@ -31,7 +31,7 @@ def download_weights(url):
 @st.cache
 def load_model():
  print(" MODEL LOADED !!!")
- return torch.load(os.path.join('weight_path',map_location=device)
+ return torch.load('weight_path',map_location=device)
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
