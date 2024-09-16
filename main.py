@@ -11,7 +11,7 @@ from torchvision.ops import nms
 import gdown 
 # import torchvision.datasets.utils as utils
 
-st.experimental_memo.clear()
+# st.experimental_memo.clear()
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
